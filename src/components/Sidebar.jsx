@@ -119,3 +119,4 @@ export default function Sidebar({ activeTab, setActiveTab, isOpen, setIsOpen }) 
       </div>
     </aside>
   );
+}
