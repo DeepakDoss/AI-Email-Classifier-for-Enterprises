@@ -10,6 +10,7 @@ function App() {
   const [activeTab, setActiveTab] = useState('Overview');
   const [starredIds, setStarredIds] = useState([]);
   const [localUnread, setLocalUnread] = useState({});
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
   const toggleStar = (id) => {
     setStarredIds(prev => 
@@ -39,7 +40,12 @@ function App() {
 
   return (
     <div className="flex h-screen w-full bg-gray-50 dark:bg-background overflow-hidden premium-gradient">
-      <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} />
+      <Sidebar 
+        activeTab={activeTab} 
+        setActiveTab={setActiveTab} 
+        isOpen={isSidebarOpen} 
+        setIsOpen={setIsSidebarOpen} 
+      />
       
       <main className="flex-1 h-screen overflow-y-auto custom-scrollbar relative">
         <AnimatePresence mode="wait">
